@@ -8,12 +8,14 @@ import os
 class RapidjsonConan(ConanFile):
     name = "rapidjson"
     version = "1.1.0"
-    license = "https://github.com/Tencent/rapidjson/blob/v%s/license.txt" % version
-    url = "https://github.com/Mikayex/conan-rapidjson"
     description = "A fast JSON parser/generator for C++ with both SAX/DOM style API"
+    homepage = "http://rapidjson.org/"
+    url = "https://github.com/bincrafters/conan-rapidjson"
+    author = "Bincrafters <bincrafters@gmail.com>"
+    license = "https://github.com/Tencent/rapidjson/blob/v%s/license.txt" % version
     exports = ["LICENSE.md"]
-    source_subfolder = "source_subfolder"
     no_copy_source = True
+    source_subfolder = "source_subfolder"
 
     def source(self):
         source_url = "https://github.com/Tencent/rapidjson"
