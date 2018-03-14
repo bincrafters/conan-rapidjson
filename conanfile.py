@@ -12,7 +12,7 @@ class RapidjsonConan(ConanFile):
     homepage = "http://rapidjson.org/"
     url = "https://github.com/bincrafters/conan-rapidjson"
     author = "Bincrafters <bincrafters@gmail.com>"
-    license = "https://github.com/Tencent/rapidjson/blob/v%s/license.txt" % version
+    license = "MIT"
     exports = ["LICENSE.md"]
     no_copy_source = True
     source_subfolder = "source_subfolder"
