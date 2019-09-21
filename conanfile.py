@@ -15,17 +15,17 @@ class RapidjsonConan(ConanFile):
     license = "MIT"
     exports = ["LICENSE.md"]
     no_copy_source = True
-    source_subfolder = "source_subfolder"
+    _source_subfolder = "source_subfolder"
 
     def source(self):
         source_url = "https://github.com/Tencent/rapidjson"
         tools.get("{0}/archive/v{1}.tar.gz".format(source_url, self.version))
         extracted_dir = self.name + "-" + self.version
-        os.rename(extracted_dir, self.source_subfolder)
+        os.rename(extracted_dir, self._source_subfolder)
 
     def package(self):
-        include_folder = os.path.join(self.source_subfolder, "include")
-        self.copy(pattern="license.txt", dst="licenses", src=self.source_subfolder)
+        include_folder = os.path.join(self._source_subfolder, "include")
+        self.copy(pattern="license.txt", dst="licenses", src=self._source_subfolder)
         self.copy(pattern="*", dst="include", src=include_folder)
 
     def package_id(self):
